@@ -14,9 +14,3 @@ Harmonic Team takes the position that the architecture of dependence between hum
 
 From a software design perspective, this means software systems should facilitate collaboration between humans and AI rather than merely enable the delegation of tasks from humans to AI (or vice versa).
 
-## Collective Intelligence
-
-> All intelligence is collective intelligence.
-
-[TODO fill this in]
-
