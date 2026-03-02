@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <title>Content Types - Harmonic</title>
+  <meta name="description" content="Harmonic's three main data types: Notes, Decisions, and Commitments">
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Content Types - Harmonic" />
+  <meta name="twitter:description" content="Harmonic's three main data types: Notes, Decisions, and Commitments" />
+  <meta name="twitter:image" content="https://about.harmonic.social/tri-logos.png" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Content Types - Harmonic" />
+  <meta property="og:description" content="Harmonic's three main data types: Notes, Decisions, and Commitments" />
+  <meta property="og:url" content="https://about.harmonic.social/content-types" />
+  <meta property="og:image" content="https://about.harmonic.social/tri-logos.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <style>
+    :root {
+      --color-primary: #1a1a2e;
+      --color-secondary: #16213e;
+      --color-accent: #0f3460;
+      --color-highlight: #e94560;
+      --color-text: #2d3436;
+      --color-text-light: #636e72;
+      --color-bg-light: #f8f9fa;
+      --color-bg-alt: #ffffff;
+      --color-border: #e0e0e0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      font-family: 'Roboto', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      color: var(--color-text);
+      line-height: 1.7;
+      background: var(--color-bg-alt);
+    }
+
+    h1 {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Source Code Pro', monospace;
+      color: var(--color-primary);
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--color-highlight), var(--color-accent));
+      border-radius: 2px;
+    }
+
+    h4 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--color-secondary);
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    a {
+      color: var(--color-highlight);
+      text-decoration: none;
+      transition: color 0.2s ease, opacity 0.2s ease;
+    }
+
+    a:hover {
+      color: var(--color-accent);
+      text-decoration: underline;
+    }
+
+    .flow-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--color-text);
+    }
+
+    .content-section {
+      padding: 80px 0;
+      background: var(--color-bg-alt);
+    }
+
+    .content-section:nth-child(even) {
+      background: var(--color-bg-light);
+    }
+
+    .content-section .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .content-type-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 1.5rem;
+    }
+
+    .content-type-header img {
+      width: 36px;
+      height: auto;
+      align-self: center;
+      position: relative;
+      top: 10px;
+    }
+
+    .content-type-header h2 {
+      margin-bottom: 0;
+    }
+
+    .content-type-header h2::after {
+      display: none;
+    }
+
+    .screenshot {
+      margin: 2rem 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      border-radius: 8px;
+      max-width: 100%;
+    }
+
+    .screenshot-small {
+      max-width: 70%;
+    }
+
+    .screenshot-medium {
+      max-width: 80%;
+    }
+
+    .page-header {
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .page-header h1 {
+      color: #ffffff;
+      font-family: 'Source Code Pro', monospace;
+      font-size: 2.5rem;
+      margin: 40px 0 20px;
+    }
+
+    .page-header p {
+      color: rgba(255,255,255,0.9);
+      font-size: 1.1rem;
+      margin: 0 0 30px;
+    }
+
+    .back-link {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.95rem;
+      display: block;
+      text-align: left;
+    }
+
+    .back-link:hover {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    footer.page-footer {
+      background: var(--color-primary) !important;
+      padding: 40px 0 50px;
+    }
+
+    footer a {
+      color: rgba(255,255,255,0.7);
+      display: inline-block;
+      margin: 5px 0;
+      transition: color 0.2s ease;
+    }
+
+    footer a:hover {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      .content-section {
+        padding: 60px 0;
+      }
+
+      .screenshot-small,
+      .screenshot-medium {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+
+
+  <body>
+
+    <main class="page-content" aria-label="Content">
+      <header class="page-header">
+        <a href="/" class="back-link">&larr; Back</a>
+        <h1>Content Types</h1>
+        <p>Harmonic has three main content types: Notes, Decisions, and Commitments.</p>
+      </header>
+
+      <!-- Notes -->
+      <section class="content-section">
+        <div class="container" style="text-align: center;">
+          <div class="content-type-header">
+            <img src="note-icon.svg" alt="Note icon"/>
+            <h2 id="notes">Notes</h2>
+          </div>
+          <p class="flow-text" style="text-align: left; margin-top: 2rem;"><strong>Notes</strong> are like tweets or posts. They can be short or long. Instead of the standard "like" button, notes simply have a read confirmation button that communicates awareness without necessarily implying endorsement.</p>
+          <img src="confirm-note-screenshot-v2.png" alt="Note screenshot" class="screenshot"/>
+        </div>
+      </section>
+
+      <!-- Decisions -->
+      <section class="content-section">
+        <div class="container" style="text-align: center;">
+          <div class="content-type-header">
+            <img src="decision-icon.svg" alt="Decision icon"/>
+            <h2 id="decisions">Decisions</h2>
+          </div>
+          <p class="flow-text" style="text-align: left; margin-top: 2rem;"><strong>Decisions</strong> are like polls that participants can add options to and that use <a href="https://danallison.info/writings/acceptance-voting">acceptance voting</a> to converge on the path of greatest acceptance.</p>
+          <img src="options-example-acceptance.png" alt="Decision screenshot" class="screenshot screenshot-small"/>
+        </div>
+      </section>
+
+      <!-- Commitments -->
+      <section class="content-section">
+        <div class="container" style="text-align: center;">
+          <div class="content-type-header">
+            <img src="commitment-icon.svg" alt="Commitment icon"/>
+            <h2 id="commitments">Commitments</h2>
+          </div>
+          <p class="flow-text" style="text-align: left; margin-top: 2rem;"><strong>Commitments</strong> are like Kickstarter campaigns where you pledge participation instead of money. This enables coordinated group action at scale.</p>
+          <img src="commitment-screenshot.png" alt="Commitment screenshot" class="screenshot screenshot-medium"/>
+        </div>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <div class="container">
+        <a href="https://decisive.team/privacy">Privacy Policy</a><br/>
+        <a href="https://decisive.team/tos">Terms of Service</a>
+      </div>
+    </footer>
+
+  </body>
+
+</html>
